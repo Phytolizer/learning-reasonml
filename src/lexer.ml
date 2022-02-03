@@ -24,14 +24,15 @@ let create (input : string) =
 let new_token (t : Token.kind) (c : char) = Token.create t (String.make 1 c)
 
 let next_token (l : t) =
+  let open Token in
   match l.ch with
-  | '\x00' -> (new_token Token.TkEof l.ch, l)
-  | '=' -> (Token.TkAssign, read_char l)
-  | '+' -> (Token.TkPlus, read_char l)
-  | '(' -> (Token.TkLParen, read_char l)
-  | ')' -> (Token.TkRParen, read_char l)
-  | '{' -> (Token.TkLBrace, read_char l)
-  | '}' -> (Token.TkRBrace, read_char l)
-  | ',' -> (Token.TkComma, read_char l)
-  | ';' -> (Token.TkSemicolon, read_char l)
-  | x -> (Token.TkIllegal, read_char l)
+  | '\x00' -> (new_token TkEof l.ch, l)
+  | '=' -> (new_token TkAssign l.ch, read_char l)
+  | '+' -> (new_token TkPlus l.ch, read_char l)
+  | '(' -> (new_token TkLParen l.ch, read_char l)
+  | ')' -> (new_token TkRParen l.ch, read_char l)
+  | '{' -> (new_token TkLBrace l.ch, read_char l)
+  | '}' -> (new_token TkRBrace l.ch, read_char l)
+  | ',' -> (new_token TkComma l.ch, read_char l)
+  | ';' -> (new_token TkSemicolon l.ch, read_char l)
+  | x -> (new_token TkIllegal x, read_char l)

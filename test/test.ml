@@ -1,4 +1,5 @@
 open OUnit2
+open Monkey.Token
 
 let tests =
   "test suite"
