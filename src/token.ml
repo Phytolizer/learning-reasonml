@@ -40,3 +40,5 @@ let create kind literal = { kind; literal }
 
 let cmp { kind = k1; literal = l1 } { kind = k2; literal = l2 } =
   if k1 = k2 then String.equal l1 l2 else false
+
+let ( = ) = cmp

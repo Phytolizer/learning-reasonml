@@ -11,6 +11,7 @@
     "@opam/ounit2": "*"
   },
   "devDependencies": {
+    "@opam/utop": "*",
     "@opam/ocaml-lsp-server": "*",
     "@opam/ocamlformat": "*",
     "@opam/merlin": "*"

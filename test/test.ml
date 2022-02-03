@@ -12,13 +12,16 @@ let tests =
            let open Token in
            let rec check_tokens expected actual =
              match expected with
-             | [] -> ( match actual with [] -> true | _ -> false)
+             | [] -> (
+                 match actual with
+                 | [] -> ()
+                 | _ -> assert_failure "actual token list too long.")
              | x :: xs -> (
                  match actual with
                  | y :: ys ->
-                     assert_equal ~cmp:Token.cmp ~printer:Token.to_string x y;
+                     assert_equal ~printer:Token.to_string x y;
                      check_tokens xs ys
-                 | [] -> false)
+                 | [] -> assert_failure "actual token list too short.")
            in
            let expected =
              [
@@ -33,7 +36,7 @@ let tests =
                Token.create TkEof "";
              ]
            in
-           assert (check_tokens expected tokens) );
+           check_tokens expected tokens );
        ]
 
 let _ = run_test_tt_main tests
