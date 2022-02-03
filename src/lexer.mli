@@ -1,5 +1,5 @@
-type lexer
+type t
 
-val create : string -> lexer
-val next_token : lexer -> Token.t * lexer
-val all_tokens : lexer -> Token.t list
+val create : string -> t
+val next_token : t -> Token.t * t
+val all_tokens : t -> Token.t list

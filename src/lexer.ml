@@ -36,3 +36,7 @@ let next_token (l : t) =
   | ',' -> (new_token TkComma l.ch, read_char l)
   | ';' -> (new_token TkSemicolon l.ch, read_char l)
   | x -> (new_token TkIllegal x, read_char l)
+
+let rec all_tokens (l : t) =
+  let t, l' = next_token l in
+  if t.kind = TkEof then [ t ] else t :: all_tokens l'
