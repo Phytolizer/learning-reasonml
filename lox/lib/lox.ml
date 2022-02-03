@@ -1,3 +1,5 @@
+module State = State
+
 let rec print_tokens (tokens : Token.t list) : unit =
   match tokens with
   | [] -> ()
