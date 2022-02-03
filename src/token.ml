@@ -5,6 +5,12 @@ type kind =
   | TkInt
   | TkAssign
   | TkPlus
+  | TkMinus
+  | TkAsterisk
+  | TkSlash
+  | TkBang
+  | TkLt
+  | TkGt
   | TkComma
   | TkSemicolon
   | TkLParen
@@ -22,6 +28,12 @@ let kind_name kind =
   | TkInt -> "INT"
   | TkAssign -> "="
   | TkPlus -> "+"
+  | TkMinus -> "-"
+  | TkAsterisk -> "*"
+  | TkSlash -> "/"
+  | TkBang -> "!"
+  | TkLt -> "<"
+  | TkGt -> ">"
   | TkComma -> ","
   | TkSemicolon -> ";"
   | TkLParen -> "("

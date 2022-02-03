@@ -9,6 +9,8 @@ let next_token _ =
     };
 
     let result = add(five, ten);
+    !-/*5;
+    5 < 10 > 5;
     |}
   in
   let lexer = Monkey.Lexer.create input in
@@ -66,6 +68,18 @@ let next_token _ =
       T.create TkComma ",";
       T.create TkIdent "ten";
       T.create TkRParen ")";
+      T.create TkSemicolon ";";
+      T.create TkBang "!";
+      T.create TkMinus "-";
+      T.create TkSlash "/";
+      T.create TkAsterisk "*";
+      T.create TkInt "5";
+      T.create TkSemicolon ";";
+      T.create TkInt "5";
+      T.create TkLt "<";
+      T.create TkInt "10";
+      T.create TkGt ">";
+      T.create TkInt "5";
       T.create TkSemicolon ";";
       T.create TkEof "";
     ]
