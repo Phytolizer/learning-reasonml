@@ -1,9 +1,0 @@
-(library
- (name monkey)
- (modules Token))
-
-(executable
- (name test)
- (public_name test.exe)
- (modules Test)
- (libraries ounit2))
