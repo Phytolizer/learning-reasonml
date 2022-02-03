@@ -3,7 +3,8 @@
     "build": "dune build -p lox"
   },
   "scripts": {
-    "test": "esy x LoxRepl"
+    "test": "esy x LoxRepl",
+    "format": "esy dune build @fmt --auto-promote"
   },
   "dependencies": {
     "ocaml": "4.10.x",
