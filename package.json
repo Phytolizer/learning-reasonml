@@ -8,8 +8,7 @@
   "dependencies": {
     "ocaml": "4.10.x",
     "@opam/dune": "*",
-    "@opam/ounit2": "*",
-    "@opam/bos": "*"
+    "@opam/ounit2": "*"
   },
   "devDependencies": {
     "@opam/utop": "*",
