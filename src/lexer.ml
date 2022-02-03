@@ -26,7 +26,7 @@ let new_token (t : Token.kind) (c : char) = Token.create t (String.make 1 c)
 let next_token (l : t) =
   let open Token in
   match l.ch with
-  | '\x00' -> (new_token TkEof l.ch, l)
+  | '\x00' -> (Token.create TkEof "", l)
   | '=' -> (new_token TkAssign l.ch, read_char l)
   | '+' -> (new_token TkPlus l.ch, read_char l)
   | '(' -> (new_token TkLParen l.ch, read_char l)
