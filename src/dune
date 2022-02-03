@@ -1,2 +1,3 @@
 (library
- (name monkey))
+ (name monkey)
+ (public_name monkey))
