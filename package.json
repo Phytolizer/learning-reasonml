@@ -1,0 +1,18 @@
+{
+    "esy": {
+        "build": "dune build -p monkey"
+    },
+    "dependencies": {
+        "ocaml": "4.10.x",
+        "@opam/dune": "*",
+        "@opam/ounit2": "*"
+    },
+    "devDependencies": {
+        "@opam/ocaml-lsp-server": "*",
+        "@opam/ocamlformat": "*",
+        "@opam/merlin": "*"
+    },
+    "resolutions": {
+        "@opam/ocp-indent": "1.7.0"
+    }
+}
