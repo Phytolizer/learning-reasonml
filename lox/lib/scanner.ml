@@ -21,17 +21,18 @@ let add_token (s : t) (kind : TokenKind.t) (literal : Object.t) : Token.t =
 let scan_token (s : t) : Token.t option * t =
   let c, s = advance s in
   let n = Object.null in
+  let module T = TokenKind in
   match c with
-  | '(' -> (Some (add_token s TokenKind.LeftParen n), s)
-  | ')' -> (Some (add_token s TokenKind.RightParen n), s)
-  | '{' -> (Some (add_token s TokenKind.LeftBrace n), s)
-  | '}' -> (Some (add_token s TokenKind.RightBrace n), s)
-  | ',' -> (Some (add_token s TokenKind.Comma n), s)
-  | '.' -> (Some (add_token s TokenKind.Dot n), s)
-  | '-' -> (Some (add_token s TokenKind.Minus n), s)
-  | '+' -> (Some (add_token s TokenKind.Plus n), s)
-  | ';' -> (Some (add_token s TokenKind.Semicolon n), s)
-  | '*' -> (Some (add_token s TokenKind.Star n), s)
+  | '(' -> (Some (add_token s T.LeftParen n), s)
+  | ')' -> (Some (add_token s T.RightParen n), s)
+  | '{' -> (Some (add_token s T.LeftBrace n), s)
+  | '}' -> (Some (add_token s T.RightBrace n), s)
+  | ',' -> (Some (add_token s T.Comma n), s)
+  | '.' -> (Some (add_token s T.Dot n), s)
+  | '-' -> (Some (add_token s T.Minus n), s)
+  | '+' -> (Some (add_token s T.Plus n), s)
+  | ';' -> (Some (add_token s T.Semicolon n), s)
+  | '*' -> (Some (add_token s T.Star n), s)
   | _ ->
       let state = State.error s.state s.line "Unexpected character." in
       (None, { s with state })
