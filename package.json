@@ -9,7 +9,7 @@
     "ocaml": "4.10.x",
     "@opam/dune": "*",
     "@opam/ounit2": "*",
-    "@opam/core": "*"
+    "@opam/bos": "*"
   },
   "devDependencies": {
     "@opam/utop": "*",
