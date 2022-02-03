@@ -1,0 +1,19 @@
+{
+  "esy": {
+    "build": "dune build"
+  },
+  "scripts": {
+    "test": "dune runtest"
+  },
+  "dependencies": {
+    "ocaml": "4.10.x",
+    "@opam/dune": "*",
+    "@opam/ounit2": "*"
+  },
+  "devDependencies": {
+    "@opam/utop": "*",
+    "@opam/ocaml-lsp-server": "*",
+    "@opam/ocamlformat": "*",
+    "@opam/merlin": "*"
+  }
+}

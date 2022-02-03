@@ -1,0 +1,10 @@
+(library
+ (name lox)
+ (public_name lox)
+ (modules Lox))
+
+(executable
+ (name loxRepl)
+ (public_name loxRepl)
+ (modules LoxRepl)
+ (libraries lox))
