@@ -1,10 +1,12 @@
-type token_kind =
+type kind =
   | TkIllegal
   | TkEof
   | TkIdent
   | TkInt
   | TkAssign
   | TkPlus
+  | TkComma
+  | TkSemicolon
   | TkLParen
   | TkRParen
   | TkLBrace
@@ -12,7 +14,7 @@ type token_kind =
   | TkFunction
   | TkLet
 
-let token_kind_name kind =
+let kind_name kind =
   match kind with
   | TkIllegal -> "ILLEGAL"
   | TkEof -> "EOF"
@@ -20,6 +22,8 @@ let token_kind_name kind =
   | TkInt -> "INT"
   | TkAssign -> "="
   | TkPlus -> "+"
+  | TkComma -> ","
+  | TkSemicolon -> ";"
   | TkLParen -> "("
   | TkRParen -> ")"
   | TkLBrace -> "{"
@@ -27,7 +31,9 @@ let token_kind_name kind =
   | TkFunction -> "FUNCTION"
   | TkLet -> "LET"
 
-type token = { kind : token_kind; literal : string }
+type t = { kind : kind; literal : string }
 
-let token_to_string { kind; literal } =
-  Printf.sprintf "{Type:%s Literal:%s}" (token_kind_name kind) literal
+let to_string { kind; literal } =
+  Printf.sprintf "{Type:%s Literal:%s}" (kind_name kind) literal
+
+let create kind literal = { kind; literal }
