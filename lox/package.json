@@ -1,9 +1,9 @@
 {
   "esy": {
-    "build": "dune build"
+    "build": "dune build -p lox"
   },
   "scripts": {
-    "test": "dune runtest"
+    "test": "esy x LoxRepl"
   },
   "dependencies": {
     "ocaml": "4.10.x",

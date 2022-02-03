@@ -4,7 +4,7 @@
  (modules Lox))
 
 (executable
- (name loxRepl)
- (public_name loxRepl)
+ (name LoxRepl)
+ (public_name LoxRepl)
  (modules LoxRepl)
  (libraries lox))
