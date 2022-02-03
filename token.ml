@@ -1,5 +1,3 @@
-open Printf
-
 type token_kind =
   | TkIllegal
   | TkEof
@@ -32,4 +30,4 @@ let token_kind_name kind =
 type token = { kind : token_kind; literal : string }
 
 let token_to_string { kind; literal } =
-  sprintf "{Type:%s Literal:%s}" (token_kind_name kind) literal
+  Printf.sprintf "{Type:%s Literal:%s}" (token_kind_name kind) literal
