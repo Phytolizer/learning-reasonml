@@ -16,11 +16,8 @@ let tests =
              | x :: xs -> (
                  match actual with
                  | y :: ys ->
-                     if x = y then check_tokens xs ys
-                     else (
-                       print_endline (Token.to_string x);
-                       print_endline (Token.to_string y);
-                       false)
+                     assert_equal ~cmp:Token.cmp ~printer:Token.to_string x y;
+                     check_tokens xs ys
                  | [] -> false)
            in
            let expected =
